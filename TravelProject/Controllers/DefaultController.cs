@@ -14,10 +14,6 @@ namespace TravelProject.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            return View();
-        }
 
         public ActionResult Contact()
         {
