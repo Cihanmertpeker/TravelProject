@@ -1,0 +1,33 @@
+﻿@model TravelProject.Models.Classes.Blog
+
+@{
+    ViewBag.Title = "NewBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Yeni Blog Ekle</h4>
+<br />
+
+<form class="form-group" method="post">
+    @Html.Label("Başlık")
+    <br />
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Tarih")
+    <br />
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Resim")
+    <br />
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Açıklama")
+    <br />
+    @Html.TextAreaFor(x => x.Description, 10, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Blog Kaydet</button>
+</form>
+

@@ -15,16 +15,11 @@ namespace TravelProject
 
 
             routes.MapRoute(
-               name: "Blog",
-               url: "Blog/{action}/{id}",
-               defaults: new { controller = "Blog", action = "Index", id = UrlParameter.Optional }
-           );
-
-            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-              defaults: new { controller = "Blog", action = "Index", id = UrlParameter.Optional }
+              defaults: new { controller = "Default", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
 }
+// http://localhost:50516/Views/Blog/Index.cshtml

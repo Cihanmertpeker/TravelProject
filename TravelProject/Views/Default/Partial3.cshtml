@@ -1,0 +1,10 @@
+﻿@using TravelProject.Models.Classes
+@model List<Blog>
+
+<ul class="list list-pad">
+    @{ int i = 0;}
+    @foreach (var item in Model)
+    {
+        <li class="list-bg"><span>@{i++;} @i.</span><a href="~/Blog/BlogDetail/@item.Id">@item.Title</a></li>
+    }    
+</ul>
