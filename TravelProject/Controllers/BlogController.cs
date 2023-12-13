@@ -47,7 +47,7 @@ namespace TravelProject.Controllers
             context.Comments.Add(comment);
             context.SaveChanges();
             return PartialView();
-        }       
-
+        }
+       
     }
 }

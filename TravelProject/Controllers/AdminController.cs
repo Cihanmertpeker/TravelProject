@@ -11,6 +11,7 @@ namespace TravelProject.Controllers
     {
         Context Context = new Context();
         // GET: Admin
+        [Authorize]
         public ActionResult Index()
         {
             var values =Context.Blogs.ToList();
@@ -58,5 +59,40 @@ namespace TravelProject.Controllers
 
             return RedirectToAction("Index");
         }
+        public ActionResult CommentList()
+        {
+            var commments = Context.Comments.ToList();
+            return View(commments);
+        }
+
+        public ActionResult DeleteComment(int id)
+        {
+            var deletedComment = Context.Comments.Find(id);
+            Context.Comments.Remove(deletedComment);
+            Context.SaveChanges();
+            return RedirectToAction("CommentList");
+        }
+
+        [HttpGet]
+        public ActionResult EditComment(int id)
+        {
+            var comment = Context.Comments.Find(id);
+            return View("EditComment", comment);
+        }
+        [HttpPost]
+        public ActionResult EditComment(Comment comment)
+        {
+            var editedComment = Context.Comments.Find(comment.Id);
+
+            editedComment.MemberName = comment.MemberName;
+            editedComment.MemberComment = comment.MemberComment;
+            editedComment.Mail = comment.Mail;
+            editedComment.Id = comment.Id;                                
+            Context.SaveChanges();
+
+            return RedirectToAction("CommentList");
+        }
+
+
     }
 }

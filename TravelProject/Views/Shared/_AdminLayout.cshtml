@@ -14,9 +14,10 @@
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
         <h3 class="w3-bar-item">Menüler</h3>
         <a href="~/Admin/Index" class="w3-bar-item w3-button">Bloglar</a>
-        <a href="~/Admin/Contact" class="w3-bar-item w3-button">Yorumlar</a>
+        <a href="~/Admin/CommentList" class="w3-bar-item w3-button">Yorumlar</a>
         <a href="/Admin/Contact" class="w3-bar-item w3-button">İletişim</a>
         <a href="/Default/Index" class="w3-bar-item w3-button">Ana Sayfaya Git</a>
+        <a href="/Login/Logout" class="w3-bar-item w3-button">Çıkış Yap</a>
     </div>
 
     <!-- Page Content -->
@@ -27,10 +28,7 @@
         </div>        
 
         <div class="w3-container">
-             @RenderBody()
-            @*<h2>Sidebar Navigation Example</h2>
-            <p>The sidebar with is set with "style="width:25%".</p>
-            <p>The left margin of the page content is set to the same value.</p>*@
+             @RenderBody()           
         </div>
 
     </div>
