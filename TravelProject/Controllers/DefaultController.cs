@@ -14,7 +14,7 @@ namespace TravelProject.Controllers
         public ActionResult Index()
         {
          
-            var values = context.Blogs.Take(5).OrderByDescending(x=>x.Date).ToList();
+            var values = context.Blogs.Take(10).OrderByDescending(x=>x.Date).ToList();
             return View(values);
         }
 
